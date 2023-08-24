@@ -36,9 +36,64 @@
     font-size: 0.30em;
     line-height: 1.5;
 }
-.url-text2 {
-    font-size: 0.5em;
+.button-text {
+    font-size: 0.6em;
+    line-height: 1.2;
+    display: table;
+    margin: auto;
+  }
+  .url-text {
+    font-size: 0.35em;
+    line-height: 1.5;
+    font-family: "Kaisei Decol", serif;
+    display: block;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .url-text2 {
+    font-size: 0.3em;
     line-height: 1.2;
     display: block;
     margin: auto;
-}
+  }
+  .seting {
+    line-height: 0.2;
+    margin: auto;
+  }
+  .seting-text {
+    font-size: 0.5em;
+    line-height: 1.2;
+    font-family: "Kaisei Decol", serif;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .checkbox-text {
+    font-size: 0.2em;
+    font-family: "Kaisei Decol", serif;
+    cursor: pointer; /* カーソル設定 */
+    float: center;
+    width: 6em;
+  }
+  .seting input[type="checkbox"] {
+    display: none; /* チェックボックスは非表示 */
+  }
+  /* --- チェックボックス直後のlabel --- */
+  .seting input[type="checkbox"] + label::before {
+    text-align: center;
+    opacity: 0.2; /* 透明度       */
+    cursor: pointer; /* カーソル設定 */
+    transition: 0.2s; /* なめらか変化 */
+    content: "🪶";
+  }
+  /* --- 選択されたチェックボックス直後のlabel --- */
+  .seting input[type="checkbox"]:checked + label::before {
+    opacity: 1; /* 透明度       */
+  }
+  .cb {
+    /* floatを解除 */
+    clear: both;
+  }
