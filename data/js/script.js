@@ -1,5 +1,5 @@
 document.getElementById("url-button").onclick = function () {
-    window.location.href = 'https://www.youtube.com/channel/UCrgaidd-K-sjnoz61y52f1Q';
+    window.location.href = 'https://www.youtube.com/@amaochi';
 };
 document.getElementById("url-button2").onclick = function () {
     window.location.href = 'https://twitter.com/amaochi_003';
@@ -192,7 +192,7 @@ fetch(url)
         var area = weather[0].timeSeries[0].areas[area_no];
         // 発表者と報告日時の情報を画面に書き出す
         document.getElementById("publishingOffice").innerText = '発表者:' + weather[0].publishingOffice;
-        document.getElementById("reportDatetime").innerText = '報告日時:' + weather[0].reportDatetime.replace('+09:00', '').replace('T', ' ');
+        document.getElementById("reportDatetime").innerText = '発表日時:' + weather[0].reportDatetime.replace('+09:00', '').replace('T', ' ');
         // 特定地域の情報を画面に書き出す
         document.getElementById("targetArea").innerText = '対象地域:' + area.area.name;
         document.getElementById("today").innerText = '今日の天気:' + wc[area.weatherCodes[0]];
@@ -378,12 +378,16 @@ fetch('https://www.jma.go.jp/bosai/common/const/area.json')
 
             });
             categorySelect3.addEventListener('input', () => {
-                document.getElementById("send-button").onclick = function () {
+                const new_url = new URL(window.location.href);
+                new_url.searchParams.set('area', categories2.find(e => e.name === categorySelect2.value).category2)
+                new_url.searchParams.set('area_no', categorySelect3.selectedIndex - 1);
+                window.location.href = new_url;
+                /*document.getElementById("send-button").onclick = function () {
                     const new_url = new URL(window.location.href);
                     new_url.searchParams.set('area', categories2.find(e => e.name === categorySelect2.value).category2)
                     new_url.searchParams.set('area_no', categorySelect3.selectedIndex - 1);
                     window.location.href = new_url;
-                };
+                };*/
             });
         });
     })
