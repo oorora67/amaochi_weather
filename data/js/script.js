@@ -195,9 +195,24 @@ fetch(url)
         document.getElementById("reportDatetime").innerText = '発表日時:' + weather[0].reportDatetime.replace('+09:00', '').replace('T', ' ');
         // 特定地域の情報を画面に書き出す
         document.getElementById("targetArea").innerText = '対象地域:' + area.area.name;
-        document.getElementById("today").innerText = '今日の天気:' + wc[area.weatherCodes[0]];
-        document.getElementById("tomorrow").innerText = '明日の天気:' + wc[area.weatherCodes[1]];
-        document.getElementById("dayAfterTomorrow").innerText = '明後日の天気:' + wc[area.weatherCodes[2]];
+        if (wc[area.weatherCodes[0]]) {
+            document.getElementById("today").innerText = '今日の天気:' + wc[area.weatherCodes[0]];
+        }
+        else {
+            document.getElementById("today").innerText = '今日の天気:' + '情報がありません'
+        };
+        if (wc[area.weatherCodes[1]]) {
+            document.getElementById("tomorrow").innerText = '明日の天気:' + wc[area.weatherCodes[1]];
+        }
+        else {
+            document.getElementById("dayAfterTomorrow").innerText = '明日の天気:' + '情報がありません'
+        };
+        if (wc[area.weatherCodes[2]]) {
+            document.getElementById("tomorrow").innerText = '明日の天気:' + wc[area.weatherCodes[2]]
+        }
+        else {
+            document.getElementById("dayAfterTomorrow").innerText = '明後日の天気:' + '情報がありません'
+        };
         //音声
         document.getElementById("button").onclick = function (e) {
             if (document.querySelector(".button-text").innerText == "PlayNow") {
@@ -382,12 +397,9 @@ fetch('https://www.jma.go.jp/bosai/common/const/area.json')
                 new_url.searchParams.set('area', categories2.find(e => e.name === categorySelect2.value).category2)
                 new_url.searchParams.set('area_no', categorySelect3.selectedIndex - 1);
                 window.location.href = new_url;
-                /*document.getElementById("send-button").onclick = function () {
-                    const new_url = new URL(window.location.href);
-                    new_url.searchParams.set('area', categories2.find(e => e.name === categorySelect2.value).category2)
-                    new_url.searchParams.set('area_no', categorySelect3.selectedIndex - 1);
+                document.getElementById("send-button").onclick = function () {
                     window.location.href = new_url;
-                };*/
+                };
             });
         });
     })
