@@ -227,24 +227,30 @@ fetch(url)
 
             if (cb1.checked) {
                 if (wc[area.weatherCodes[0]]) {
-                    console.log('data/sound/' + area.weatherCodes[0] + '.mp3')
-                    //playlist.push('data/sound/' + area.weatherCodes[0] + '.mp3');
+                    console.log('data/sound/' + area.weatherCodes[0] + '.mp3');
+                    playlist.push('data/sound/today.mp3');
+                    playlist.push('data/sound/' + area.weatherCodes[0] + '.mp3');
+                    playlist.push('data/sound/end.mp3');
                 } else {
                     console.log("コードが存在しません")
                 }
             };
             if (cb2.checked) {
                 if (wc[area.weatherCodes[1]]) {
-                    console.log('data/sound/' + area.weatherCodes[1] + '.mp3')
-                    //playlist.push('data/sound/' + area.weatherCodes[1] + '.mp3');
+                    console.log('data/sound/' + area.weatherCodes[1] + '.mp3');
+                    playlist.push('data/sound/tomorrow.mp3');
+                    playlist.push('data/sound/' + area.weatherCodes[1] + '.mp3');
+                    playlist.push('data/sound/end.mp3');
                 } else {
                     console.log("コードが存在しません")
                 }
             };
             if (cb3.checked) {
                 if (wc[area.weatherCodes[2]]) {
-                    console.log('data/sound/' + area.weatherCodes[2] + '.mp3')
-                    //playlist.push('data/sound/' + area.weatherCodes[2] + '.mp3');
+                    console.log('data/sound/' + area.weatherCodes[2] + '.mp3');
+                    playlist.push('data/sound/dayAfterTomorrow.mp3');
+                    playlist.push('data/sound/' + area.weatherCodes[2] + '.mp3');
+                    playlist.push('data/sound/end.mp3');
                 } else {
                     console.log("コードが存在しません")
                 }
