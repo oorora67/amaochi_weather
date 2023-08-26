@@ -382,12 +382,9 @@ fetch('https://www.jma.go.jp/bosai/common/const/area.json')
                 new_url.searchParams.set('area', categories2.find(e => e.name === categorySelect2.value).category2)
                 new_url.searchParams.set('area_no', categorySelect3.selectedIndex - 1);
                 window.location.href = new_url;
-                /*document.getElementById("send-button").onclick = function () {
-                    const new_url = new URL(window.location.href);
-                    new_url.searchParams.set('area', categories2.find(e => e.name === categorySelect2.value).category2)
-                    new_url.searchParams.set('area_no', categorySelect3.selectedIndex - 1);
+                document.getElementById("send-button").onclick = function () {
                     window.location.href = new_url;
-                };*/
+                };
             });
         });
     })
