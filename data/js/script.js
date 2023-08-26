@@ -205,10 +205,10 @@ fetch(url)
             document.getElementById("tomorrow").innerText = '明日の天気:' + wc[area.weatherCodes[1]];
         }
         else {
-            document.getElementById("dayAfterTomorrow").innerText = '明日の天気:' + '情報がありません'
+            document.getElementById("tomorrow").innerText = '明日の天気:' + '情報がありません'
         };
         if (wc[area.weatherCodes[2]]) {
-            document.getElementById("tomorrow").innerText = '明日の天気:' + wc[area.weatherCodes[2]]
+            document.getElementById("dayAfterTomorrow").innerText = '明後日の天気:' + wc[area.weatherCodes[2]]
         }
         else {
             document.getElementById("dayAfterTomorrow").innerText = '明後日の天気:' + '情報がありません'
