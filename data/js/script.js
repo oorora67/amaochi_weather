@@ -290,7 +290,7 @@ fetch(url)
         };
     })
     .catch(error => {
-        document.getElementById("targetArea").innerText = '！対象地域の天気予報の取得に失敗しました。！';
+        document.getElementById("targetArea").innerText = '！対象地域の設定を見直してください！';
     });
 fetch('https://www.jma.go.jp/bosai/common/const/area.json')
     .then(function (response) {
